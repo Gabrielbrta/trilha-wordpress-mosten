@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    
+    <!-- Fonts awasome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/receitas/receitas.css">
+    <title>Lasanha de carne</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><a href="#"><i class="fa-solid fa-utensils"></i> Mosten<span class="orange">Food</span></a></div>
+
+            <div class="menu-actions">
+                <i class="fa-solid fa-xmark close"></i>
+                <i class="fa-solid fa-bars open active"></i> 
+            </div> 
+            <nav class="menu closed">
+                <ul>
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../../index.html/#receitas">Receitas</a></li>
+                    <li><a href="../../index.html/">Favoritas</a></li>
+                    <li><a href="../../index.html/">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="voltar">
+        <a href="../../index.html" class="light">
+            <i class="fa-solid fa-arrow-left-long"></i> Voltar às receitas
+        </a>
+    </nav>
+    <main id="receita-container">
+        <section class="receita-instrucoes">
+            <div class="banner">
+                <img src="../../imgs/lasanha.jpg" alt="foto de uma lasanha">
+                <section class="descricao">
+                    <div>
+                        <div class="actions">
+                            <div>
+                                <h1>Lasanha de Carne Tradicional</h1>
+                                <p class="light">Uma deliciosa lasanha de carne com molho caseiro e queijo derretido. Perfeita para reunir a família!</p>
+                            </div>
+                            <button class=""><i class="fa-solid fa-thumbs-up"></i> 30</button>
+                        </div>
+                    </div>
+
+                    <div class="estatisticas">
+                        <div class="card">
+                            <div class="icon"><i class="fa-regular fa-clock"></i></div>
+                            <div>
+                                <h2>Tempo</h2>
+                                <p class="light">1h 30min</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="icon"><i class="fa-solid fa-user-group"></i></div>
+                            <div>
+                                <h2>Porções</h2>
+                                <p class="light">8 pessoas</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+                            <div>
+                                <h2>Dificuldade</h2>
+                                <p class="light">Médio</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="ingredientes">
+                <h2>Ingredientes</h2>
+                <ul>
+                    <li>500g de massa para lasanha</li>
+                    <li>600g de carne moídaa</li>
+                    <li>2 xícaras de molho de tomate</li>
+                    <li>300g de queijo mussarela</li>
+                    <li>200g de queijo parmesão</li>
+                    <li>1 cebola média picada</li>
+                    <li>3 dentes de alho</li>
+                    <li>2 colheres de azeite</li>
+                    <li>Sal e pimenta a gosto</li>
+                    <li>Manjericão fresco</li>
+                </ul>
+            </div>
+            <div class="modo-preparo">
+                <h2>Modo de Preparo</h2>
+                <ol>
+                    <li>Pré-aqueça o forno a 180°C.</li>
+                    <li>Cozinhe a massa da lasanha conforme instruções da embalagem.</li>
+                    <li>Em uma panela, refogue a cebola e o alho no azeite.</li>
+                    <li>Adicione a carne moída e cozinhe até dourar.</li>
+                    <li>Acrescente o molho de tomate e tempere com sal, pimenta e manjericão.</li>
+                    <li>Em um refratário, faça camadas alternando massa, molho de carne e queijo.</li>
+                    <li>Cubra com queijo parmesão e leve ao forno por 35 minutos.</li>
+                    <li>Deixe descansar por 10 minutos antes de servir.</li>
+                </ol>
+            </div>
+        </section>
+        <section class="receita-feedback">
+            <div class="avaliacao">
+                <h3>Avaliar Receita</h3>
+                <p>stars <span class="light">clique para avaliar</span></p>
+            </div>
+
+            <div class="fomulario-comentarios">
+                <form action="">
+                    <h3><i class="fa-regular fa-comment-dots"></i> Comentários</h3>
+                    <textarea name="comentario" id="comentario" rows="5"></textarea>
+                    <button type="button" class="btn"><i class="fa-regular fa-paper-plane"></i> Enviar Comentário</button>
+                </form>
+                <ul class="ultimos-comentarios">
+                    <li>
+                        <div class="perfil">
+                            <p class="nome"><strong>João</strong></p>
+                            <p class="comentario light">Gostei da receita</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="perfil">
+                            <p class="nome"><strong>João</strong></p>
+                            <p class="comentario light">Gostei da receita</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="perfil">
+                            <p class="nome"><strong>João</strong></p>
+                            <p class="comentario light">Gostei da receita</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer-container">
+        <div class="footer-content">
+            <div class="redes-sociais">
+                <p><i class="fa-solid fa-utensils"></i> Mosten<span class="orange">Food</span></p>
+                <p class="light">Descubra sabores incríveis com nossas receitas cuidadosamente selecionadas. Transforme sua cozinha em um espaço de criatividade e sabor.</p>
+                <div>
+                    <a href="#"><img src="../../imgs/basil_facebook-outline.svg" alt="logo do facebook"></a>
+                    <a href="#"><img src="../../imgs/mdi_instagram.svg" alt="logo do instagram"></a>
+                    <a href="#"><img src="../../imgs/iconoir_twitter.svg" alt="logo do twitter"></a>
+                    <a href="#"><img src="../../imgs/iconoir_youtube.svg" alt="logo do youtube"></a>
+                </div>
+            </div>
+            <div class="footer-receitas">
+                <h2>Receitas</h2>
+                <ul>
+                    <li><a href="#">Pratos Principais</a></li>
+                    <li><a href="#">Sobremesas</a></li>
+                    <li><a href="#">Aperitivos</a></li>
+                    <li><a href="#">Bebidas</a></li>
+                </ul>
+            </div>
+            <div class="footer-sobre">
+                <h2>Sobre</h2>
+                <ul>
+                    <li><a href="#">Nossa História</a></li>
+                    <li><a href="#">Chefs</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-institucional">
+                <h2>Legal</h2>
+                <ul>
+                    <li><a href="#">Termos de Uso</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Direitos Autorais</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rights light">
+            <p>&copy;  2025 MostenFood. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script type="module" src="../../js/app.js"></script>
+</body>
+</html>

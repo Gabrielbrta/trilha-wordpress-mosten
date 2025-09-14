@@ -1,0 +1,42 @@
+@use "sass:color";
+@use '../variables.scss';
+@use '../mixins.scss';
+
+
+.modo-preparo {
+    @include mixins.card-receita;
+
+    h2 {
+        padding: 10px 0;
+    }
+
+    ol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+        counter-reset: num;
+        
+        li::before{
+            content: counter(num);
+            display: inline-flex;   
+            align-items: center;
+            justify-content: center;
+            height: 15px;
+            width: 15px;
+            color: variables.$bg-home;
+            font-size: .875rem;
+            background-color: variables.$primary-color;
+            padding: 10px;
+            border-radius: 50%;
+            margin-right: 3px;
+
+            
+        }
+
+        li{
+            counter-increment: num;
+            padding: 5px;
+        }
+    }
+}

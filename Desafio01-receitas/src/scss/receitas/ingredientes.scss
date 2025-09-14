@@ -1,0 +1,29 @@
+@use "sass:color";
+@use '../variables.scss';
+@use '../mixins.scss';
+
+.ingredientes {
+    @include mixins.card-receita;
+
+    h2 {
+        padding: 10px 0;
+    }
+
+    ul {
+        list-style: none;
+        li::before{
+            content: '';
+            display: inline-block;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            margin: 0 10px;
+            background-color: variables.$primary-color;
+            font-size: 1.2rem;
+        }
+
+        li{
+            padding: 5px;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@use 'sass:color';
+@use 'reset';
 @use 'variables';
 @use 'mixins';
 @use 'header';
@@ -6,37 +6,3 @@
 @use 'stats';
 @use 'receitas';
 @use 'footer';
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Cabin", sans-serif;
-    text-decoration: none;
-    scroll-behavior: smooth;
-    scroll-padding-top: 30px;
-}
-
-body {
-    background-color: variables.$bg-home;
-}
-
-.orange {
-    color: variables.$primary-color;
-}
-
-.light {
-    color: color.scale(variables.$secondary-color, $lightness: 60%);
-}
-
-.btn {
-    padding: 14px 32px;
-    background: variables.$primary-color;
-    color: variables.$bg-home;
-    transition: .3s;
-    &:hover {
-        background-color: variables.$hover-color;
-        text-decoration: underline;
-    }
-}
-

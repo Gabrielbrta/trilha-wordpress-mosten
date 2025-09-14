@@ -1,0 +1,51 @@
+@use '../variables';
+@use '../reset';
+@use '../mixins';
+@use '../header';
+@use 'receita-banner';
+@use 'ingredientes';
+@use 'modo-preparo';
+@use 'receita-feedback';
+@use '../footer';
+
+
+#receita-container {
+    max-width: 1336px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 10px;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 420px);
+    grid-template-areas: "instrucoes feedback";
+    gap: 30px;
+    @include mixins.screen-size(tablet) {
+        grid-template-columns: 100%;
+        grid-template-areas: "instrucoes" 
+                            "feedback";
+
+    }
+}
+
+.receita-instrucoes {
+    grid-area: instrucoes;
+}
+
+.receita-feedback {
+    grid-area: feedback;
+}
+
+.voltar {
+    max-width: 1336px;
+    width: 100%;
+    margin: 10px auto;
+    
+
+    a {
+        display: inline-block;
+        padding: 10px;
+        &:hover {
+            color: variables.$primary-color;
+        }
+    }
+}

@@ -1,3 +1,4 @@
+@use 'variables';
 $mobile: 550px;
 $tablet: 820px;
 $desktop: 1024px;
@@ -17,4 +18,16 @@ $desktop: 1024px;
             @content;
         }
     }
+}
+
+// modo preparo e ingredientes
+@mixin card-receita{
+    display: flex;
+    margin: 10px 10px;
+    flex-direction: column;
+    padding: 20px 50px;
+    border: 1px solid variables.$border-color;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.068);
+    background-color: variables.$bg-card;
+    border-radius: 10px;
 }
