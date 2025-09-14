@@ -1,0 +1,100 @@
+@use 'sass:color';
+@use 'variables';
+@use 'mixins';
+
+.footer-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 10px;
+    border-top: 1px solid variables.$border-color; 
+
+    @include mixins.screen-size(tablet) {
+        max-width: 650px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 1336px;
+        padding: 50px 0;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-between;
+
+        @include mixins.screen-size(mobile) {
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto;
+            h2 {
+                padding-top: 20px;
+            }
+        }
+
+        @include mixins.screen-size(tablet) {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        p:first-child {
+            font-size: 1.4rem;
+        }
+
+        .redes-sociais {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 350px;
+            width: 100%;
+
+            a{
+                display: inline-block;
+                border-radius: 5px;
+                transition: .3s;
+                padding: 3px;
+                text-align: center;
+                &:hover {
+                    
+                    background-color: color.scale(variables.$primary-color, $lightness: 50%);
+                }
+            }
+        }
+
+        .footer-receitas , .footer-sobre, .footer-institucional, .redes-sociais {
+            //tablet
+            @include mixins.screen-size(tablet) {
+                width: 50%;
+            }
+
+        }
+
+        .footer-receitas , .footer-sobre, .footer-institucional {
+            h2 {
+                font-size: 1.1rem;
+                color: variables.$secondary-color;
+            }
+
+            ul li a {
+                display: inline-block;
+                padding: 10px 0;
+                color: color.scale(variables.$secondary-color, $lightness: 60%);
+
+                &:hover {
+                    color: variables.$primary-color;
+                }
+            }
+        }
+    }
+
+    .rights {
+        border-top: 1px solid variables.$border-color;
+        padding: 50px 0;
+        text-align: center;
+    }
+}

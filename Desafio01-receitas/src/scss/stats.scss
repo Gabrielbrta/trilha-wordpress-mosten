@@ -1,0 +1,53 @@
+@use 'variables';
+@use 'mixins';
+@use "sass:color";
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 0;
+    height: 220px;
+    max-width: 1030px;
+    width: 100%;
+    padding: 0 10px;
+
+    //mobile 
+    @include mixins.screen-size(mobile){
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+        gap: 30px;
+    }
+
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center; 
+
+        i{
+            color: variables.$primary-color;
+        }
+
+        .icon {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            max-width: 48px;
+            max-height: 48px;
+            background-color:color.scale(variables.$primary-color, $lightness: 85%);
+        }
+
+        p strong {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+
+    }
+}

@@ -1,0 +1,109 @@
+@use 'variables';
+@use 'mixins';
+
+#receitas {
+    width: 100%;
+    border-top: 1px solid variables.$border-color;
+    padding-top: 20px;
+    min-height: 630px;
+    height: 100%;
+    overflow: auto;
+}
+
+.receitas-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 2.25rem;
+        margin: 20px 0;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin: 10px 0;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 1336px;
+        margin: 0 auto;
+        gap: 24px;
+
+        //mobile card-container
+        @include mixins.screen-size(mobile) {
+            padding: 0 10px;
+        }
+
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 5px;
+            min-width: 300px;
+            max-width: 315px;
+            width: 100%;
+            border: 1px solid variables.$border-color;
+            position: relative;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.062);
+            
+            //tablet 
+
+            @include mixins.screen-size(tablet) {
+                width: 45%;
+            }
+            //mobile
+            @include mixins.screen-size(mobile) {
+                width: 100%;
+            }
+
+            .level {
+                position: absolute; 
+                right: 20px;
+                background-color: variables.$primary-color;
+                color: variables.$bg-home;  
+                font-size: .875rem;
+                padding: 5px 8px;
+                border-radius: 10px; 
+            }
+
+            img {
+                border-radius: 5px 5px 0px 0px;
+                object-fit: cover;
+                height: 190px;
+                width: 100%;
+            }
+        }
+
+        .card-content {
+            padding: 20px 16px;
+            width: 100%;
+
+            .card-stats {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+                p {
+                    font-size: .875rem;
+                }
+            }
+
+            a.btn-details {
+                display: inline-block;
+                text-align: center;
+                width: 100%;
+                font-weight: 500;
+                border-radius: 5px;
+            }
+        }
+
+    }
+}

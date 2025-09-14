@@ -1,0 +1,408 @@
+header {
+  width: 100%;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.692);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  z-index: 10;
+  top: 0px;
+  border-bottom: 1px solid #e2e8f0;
+}
+header .header-container {
+  display: flex;
+  height: 100%;
+  max-width: 1336px;
+  padding: 10px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+}
+header .header-container .logo {
+  font-size: 1.875rem;
+  width: 100%;
+}
+header .header-container .logo a {
+  color: #0C0A09;
+}
+header .header-container .menu-actions {
+  max-width: 50px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+header .header-container .menu-actions i {
+  display: none;
+}
+@media (max-width: 550px) {
+  header .header-container .menu-actions i.active {
+    display: block;
+  }
+  header .header-container .menu-actions i {
+    width: 100%;
+    display: none;
+  }
+}
+header .header-container .menu-actions i {
+  cursor: pointer;
+  padding: 10px;
+}
+header .header-container .menu-actions:hover {
+  background: #F97415;
+}
+header .header-container .menu {
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+}
+header .header-container .menu i {
+  position: absolute;
+  display: none;
+}
+@media (max-width: 550px) {
+  header .header-container .menu {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    background-color: #F8F8F6;
+    top: 60px;
+    left: 0px;
+    opacity: 1;
+    transition: 0.3s;
+  }
+  header .header-container .menu i {
+    display: block;
+  }
+  header .header-container .menu.closed {
+    opacity: 0;
+    height: 0;
+  }
+  header .header-container .menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  header .header-container .menu ul li {
+    width: 100%;
+    transition: 0.3s;
+  }
+  header .header-container .menu ul li:hover {
+    background-color: #FFFFFF;
+  }
+  header .header-container .menu ul li a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+}
+header .header-container .menu ul {
+  list-style: none;
+  display: flex;
+  min-width: 300px;
+  width: 100%;
+  justify-content: space-between;
+}
+header .header-container .menu ul a {
+  color: #0C0A09;
+}
+header .header-container .menu ul a:hover {
+  color: #F97415;
+}
+
+main {
+  width: 100%;
+}
+
+.banner {
+  height: 510px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(45deg, rgba(249, 116, 21, 0.1215686275) 45%, rgba(35, 147, 12, 0.1215686275) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 130%;
+}
+.banner .btn-banner {
+  margin: 0 auto;
+  border-radius: 22px;
+  max-width: 170px;
+  font-size: 0.875rem;
+  transition: 0.3s;
+}
+.banner .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+.banner .content h1 {
+  font-size: 3.5rem;
+}
+.banner .content p {
+  font-size: 1.2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px 0;
+  height: 220px;
+  max-width: 1030px;
+  width: 100%;
+  padding: 0 10px;
+}
+@media (max-width: 550px) {
+  .stats {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    gap: 30px;
+  }
+}
+.stats-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+}
+.stats-item i {
+  color: #F97415;
+}
+.stats-item .icon {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  max-width: 48px;
+  max-height: 48px;
+  background-color: rgb(254.1, 234.15, 219.9);
+}
+.stats-item p strong {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+#receitas {
+  width: 100%;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+  min-height: 630px;
+  height: 100%;
+  overflow: auto;
+}
+
+.receitas-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.receitas-content h2 {
+  font-size: 2.25rem;
+  margin: 20px 0;
+}
+.receitas-content p {
+  font-size: 1.125rem;
+  margin: 10px 0;
+}
+.receitas-content .cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1336px;
+  margin: 0 auto;
+  gap: 24px;
+}
+@media (max-width: 550px) {
+  .receitas-content .cards-container {
+    padding: 0 10px;
+  }
+}
+.receitas-content .cards-container .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  min-width: 300px;
+  max-width: 315px;
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.062);
+}
+@media (max-width: 820px) {
+  .receitas-content .cards-container .card {
+    width: 45%;
+  }
+}
+@media (max-width: 550px) {
+  .receitas-content .cards-container .card {
+    width: 100%;
+  }
+}
+.receitas-content .cards-container .card .level {
+  position: absolute;
+  right: 20px;
+  background-color: #F97415;
+  color: #F8F8F6;
+  font-size: 0.875rem;
+  padding: 5px 8px;
+  border-radius: 10px;
+}
+.receitas-content .cards-container .card img {
+  border-radius: 5px 5px 0px 0px;
+  object-fit: cover;
+  height: 190px;
+  width: 100%;
+}
+.receitas-content .cards-container .card-content {
+  padding: 20px 16px;
+  width: 100%;
+}
+.receitas-content .cards-container .card-content .card-stats {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.receitas-content .cards-container .card-content .card-stats p {
+  font-size: 0.875rem;
+}
+.receitas-content .cards-container .card-content a.btn-details {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.footer-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 10px;
+  border-top: 1px solid #e2e8f0;
+}
+@media (max-width: 820px) {
+  .footer-container {
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.footer-container ul {
+  list-style: none;
+}
+.footer-container .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1336px;
+  padding: 50px 0;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 550px) {
+  .footer-container .footer-content {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .footer-container .footer-content h2 {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 820px) {
+  .footer-container .footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+.footer-container .footer-content p:first-child {
+  font-size: 1.4rem;
+}
+.footer-container .footer-content .redes-sociais {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 350px;
+  width: 100%;
+}
+.footer-container .footer-content .redes-sociais a {
+  display: inline-block;
+  border-radius: 5px;
+  transition: 0.3s;
+  padding: 3px;
+  text-align: center;
+}
+.footer-container .footer-content .redes-sociais a:hover {
+  background-color: rgb(252, 185.5, 138);
+}
+@media (max-width: 820px) {
+  .footer-container .footer-content .footer-receitas, .footer-container .footer-content .footer-sobre, .footer-container .footer-content .footer-institucional, .footer-container .footer-content .redes-sociais {
+    width: 50%;
+  }
+}
+.footer-container .footer-content .footer-receitas h2, .footer-container .footer-content .footer-sobre h2, .footer-container .footer-content .footer-institucional h2 {
+  font-size: 1.1rem;
+  color: #0C0A09;
+}
+.footer-container .footer-content .footer-receitas ul li a, .footer-container .footer-content .footer-sobre ul li a, .footer-container .footer-content .footer-institucional ul li a {
+  display: inline-block;
+  padding: 10px 0;
+  color: rgb(171.1714285714, 152.5428571429, 143.2285714286);
+}
+.footer-container .footer-content .footer-receitas ul li a:hover, .footer-container .footer-content .footer-sobre ul li a:hover, .footer-container .footer-content .footer-institucional ul li a:hover {
+  color: #F97415;
+}
+.footer-container .rights {
+  border-top: 1px solid #e2e8f0;
+  padding: 50px 0;
+  text-align: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Cabin", sans-serif;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  background-color: #F8F8F6;
+}
+
+.orange {
+  color: #F97415;
+}
+
+.light {
+  color: rgb(171.1714285714, 152.5428571429, 143.2285714286);
+}
+
+.btn {
+  padding: 14px 32px;
+  background: #F97415;
+  color: #F8F8F6;
+  transition: 0.3s;
+}
+.btn:hover {
+  background-color: #d36517;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
