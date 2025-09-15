@@ -5,6 +5,7 @@ function comentarios() {
 
     function adicionarComentario(comentario) {
         if(comentario !== "") {
+            entradaComentario.value = "";
             containerComentario.innerHTML += `
         <li>
             <div class="perfil">

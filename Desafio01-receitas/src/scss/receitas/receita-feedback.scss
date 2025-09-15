@@ -16,6 +16,24 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.068);
     }
 
+    .avaliacao {
+        p {
+            padding: 10px 0;
+        }
+        .stars {
+            .preenchida, .vazia {
+                cursor: pointer;
+                padding: 2px;
+                display: inline-block;
+                margin: 0 1px;
+            }
+
+            .preenchida, .vazia {
+                color: variables.$stars;
+            }
+        }
+    }
+
     .fomulario-comentarios, .fomulario-comentarios form {
         display: flex;
         flex-direction: column;
@@ -40,6 +58,8 @@
     }
 
     .fomulario-comentarios {
+        max-height: 600px;
+        overflow-y: scroll;
         ul {
             list-style: none;
 
@@ -58,6 +78,12 @@
                     }
                 }
                 
+            }
+        }
+
+        .ultimos-comentarios {
+            li{
+                    word-wrap: break-word;
             }
         }
     }
