@@ -67,7 +67,6 @@
                     transition: .3s;
                     width: 60px;
                     color: scale-color($color: variables.$secondary-color, $lightness: 30%);
-                    // color: scale-color($color: #000000, $red: 1, $green: 2, $blue: 3, $saturation: 0%, $lightness: 0%, $alpha: 1.0)
                     
                     &.like {
                         border: 1px solid variables.$border-color;

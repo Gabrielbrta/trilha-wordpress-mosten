@@ -1,5 +1,24 @@
 <?php 
 
+
+$nome = "Pedrinho";
+
+//switch
+switch ($nome) {
+    case 'MarcinhoVP':
+        echo $nome;
+        echo "<br>";
+    break;
+    case "Marcelo":
+        echo $nome;
+        echo "<br>";
+        break;
+    default:
+        echo "Não é o nome";
+        echo "<br>";
+    break;
+}
+
 $isAdmin = true;
 
 // sujo
@@ -20,15 +39,3 @@ echo "não é admin";
 echo "<br>";
 // ternario - limpo
 echo ($isAdmin) ? "É Admin" : "Não é Admin";
-
-
-//switch
-switch ($variable) {
-    case 'value':
-        # code...
-        break;
-    
-    default:
-        # code...
-        break;
-}

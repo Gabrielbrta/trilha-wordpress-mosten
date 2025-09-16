@@ -10,6 +10,7 @@ function avaliacao(){
 
     function handleClick(e, index) {
         let estrelaVazia = (totalEstrelas - 1) - index;
+        console.log(estrelaVazia, index);
         stars.innerHTML = "";
 
         // pega o indice da estrela clicada e adiciona
