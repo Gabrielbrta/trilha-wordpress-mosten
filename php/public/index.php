@@ -13,6 +13,14 @@
     // require_once './number.php';
     // require_once './arrays.php';
     // require_once './conversao-dados.php';
-    require_once './loops.php';
-
+    // require_once './loops.php';
+    // require_once './funcoes.php';
+    // require_once './closures.php';
+    // require_once './callbacks.php';
+    // require_once './callbacks-2.php';
+    // require_once './verificar-variavel-existe.php';
+    // require_once './escopo-global.php';
+    // require_once './super-globais.php';
+    // require_once './cookies.php';
+    require_once './session.php';
     // rodar o servidor php -S localhost:3000 -t public

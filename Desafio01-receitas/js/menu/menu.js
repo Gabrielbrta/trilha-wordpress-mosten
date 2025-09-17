@@ -4,6 +4,8 @@ function menu() {
     const open = document.querySelector('.menu-actions i.open')
     const close = document.querySelector('.menu-actions i.close');
     
+    if(!menu ||!open || !close) return;
+
     [open, close].forEach((btn) => {
         btn.addEventListener("click", () => {
             if(btn.classList.contains('open')) {

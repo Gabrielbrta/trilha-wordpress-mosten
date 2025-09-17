@@ -16,7 +16,7 @@
     padding: 0 10px;
 
     display: grid;
-    grid-template-columns: 1fr minmax(200px, 420px);
+    grid-template-columns: 1fr minmax(300px, 420px);
     grid-template-areas: "instrucoes feedback";
     gap: 30px;
     @include mixins.screen-size(tablet) {

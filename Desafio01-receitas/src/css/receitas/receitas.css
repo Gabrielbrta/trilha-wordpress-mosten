@@ -352,13 +352,16 @@ header .header-container .menu ul a:hover {
   padding: 10px 0;
 }
 .receita-feedback .avaliacao .stars .preenchida, .receita-feedback .avaliacao .stars .vazia {
-  cursor: pointer;
   padding: 2px;
-  display: inline-block;
-  margin: 0 1px;
 }
 .receita-feedback .avaliacao .stars .preenchida, .receita-feedback .avaliacao .stars .vazia {
   color: #FACC15;
+}
+.receita-feedback .avaliacao .stars .estrela {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  width: 24px;
 }
 .receita-feedback .fomulario-comentarios, .receita-feedback .fomulario-comentarios form {
   display: flex;
@@ -494,7 +497,7 @@ header .header-container .menu ul a:hover {
   margin: 20px auto;
   padding: 0 10px;
   display: grid;
-  grid-template-columns: 1fr minmax(200px, 420px);
+  grid-template-columns: 1fr minmax(300px, 420px);
   grid-template-areas: "instrucoes feedback";
   gap: 30px;
 }

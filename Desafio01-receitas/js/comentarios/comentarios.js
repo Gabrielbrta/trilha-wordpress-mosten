@@ -3,6 +3,8 @@ function comentarios() {
     const entradaComentario = document.querySelector(".entrada-comentario");
     const botaoEnviar = document.querySelector(".enviar");
 
+    if(!containerComentario || !entradaComentario || !botaoEnviar) return;
+
     function adicionarComentario(comentario) {
         if(comentario !== "") {
             entradaComentario.value = "";
@@ -26,14 +28,7 @@ function comentarios() {
     if(botaoEnviar) {
         botaoEnviar.addEventListener("click", handleSubmit);
     }
-    /*
-        <li>
-            <div class="perfil">
-                <p class="nome"><strong>João</strong></p>
-                <p class="comentario light">Gostei da receita</p>
-            </div>
-        </li>
-    */
+
 }
 
 function initComentarios() {

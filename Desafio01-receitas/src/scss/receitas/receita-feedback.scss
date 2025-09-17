@@ -22,14 +22,18 @@
         }
         .stars {
             .preenchida, .vazia {
-                cursor: pointer;
                 padding: 2px;
-                display: inline-block;
-                margin: 0 1px;
             }
-
+            
             .preenchida, .vazia {
                 color: variables.$stars;
+            }
+            
+            .estrela {
+                cursor: pointer;
+                display: inline-block;
+                font-size: 1rem;
+                width: 24px;
             }
         }
     }

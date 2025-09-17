@@ -2,6 +2,8 @@ function curtida() {
     const btnCurtir = document.querySelector('.curtir');
     const contador = document.querySelector('.contador');
 
+    if(!btnCurtir || !contador) return;
+
     function handleClick() {
         btnCurtir.classList.toggle('like');
         

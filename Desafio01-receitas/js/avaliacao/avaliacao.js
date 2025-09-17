@@ -1,56 +1,51 @@
-/*                <i class="fa-regular fa-star"></i>
-                <i class="fa-solid fa-star"></i> */
 function avaliacao(){
     const stars = document.querySelector('.stars');
     const totalEstrelas = 5;
 
-    function getEstrelas() {
-        return document.querySelectorAll('.estrelas');
-    }
+    if(!stars) return;
 
-    function handleClick(e, index) {
-        let estrelaVazia = (totalEstrelas - 1) - index;
-        console.log(estrelaVazia, index);
-        stars.innerHTML = "";
+// atualizo as classes que mudam o estilo da estrela
+// o parametro é o datatype-index da estrela 1-5;
+    function atualizarEstrelas(estrelasIndex) {
+        const estrelas = stars.querySelectorAll(".estrela");
 
-        // pega o indice da estrela clicada e adiciona
-        for(let i = 0; i <= index; i++) {
-            stars.innerHTML += '<i class="fa-solid fa-star preenchida estrelas"></i>';
-        }
-        
-        // o resultado da subtração entre o indice da estrela e a quantidade total de estrelas permitidas
-        // o que sobrar ele adiciona uma estrela vazia
-        if(estrelaVazia) {
-            for(let i = 1; i <= estrelaVazia; i++) {
-                stars.innerHTML += '<i class="fa-regular vazia fa-star estrelas"></i>';
+        if(!estrelas) return;
+
+        // verifico se o indice da estrela clicada é menor que o indice total das estrelas do container.
+        estrelas.forEach((estrela, i) => {
+
+            // se for menor, é inserido as classes que preenchem a estrela, caso contrario é inserido as classes que mostram a estrela vazia
+            if(i <= estrelasIndex) {
+               estrela.classList.remove("fa-regular");
+               estrela.classList.add("fa-solid", "preenchida");
+            } else {
+                estrela.classList.remove("fa-solid", "preenchida");
+                estrela.classList.add("fa-regular", "vazia");
             }
-        }
-        addEventoClickEstrelas();
-    }
-
-    function addEventoClickEstrelas() {
-        const estrelas = getEstrelas();
-        estrelas.forEach((estrela, index) => {
-            estrela.addEventListener('click', (e) => {
-                handleClick(e,index);
-            });
         });
+
     }
 
+    // crio as estrelas dentro do container
     if (stars) {
-        if(stars.innerHTML == "") {
-            for(let i = 1; i <= totalEstrelas; i++) {
-                stars.innerHTML += ` <i class="fa-regular fa-star estrelas"></i>`;
-            }
+        for(let i = 0; i < totalEstrelas; i++) {
+            const star = document.createElement('i');
+            star.classList.add("fa-regular", 'fa-star', 'estrela');
+            star.dataset.index = i;
 
-            const estrelas = getEstrelas();
-            estrelas.forEach((estrela, index) => {
-                estrela.addEventListener('click', (e) =>{
-                    handleClick(e, index);
-                });
-            });
+            // container das estrelas
+            stars.appendChild(star);
         }
     }
+    
+    // adiciono o evento de clique no container pai e se a estrela tiver a classe 'estrela', pegamos o indice da estrela e passamos para a função que atualiza a estrela
+
+    stars.addEventListener('click', (e) => {
+        if(e.target.classList.contains('estrela')) {
+            const index = parseInt(e.target.dataset.index, 10);
+            atualizarEstrelas(index);
+        }
+    })
 
 }
 
