@@ -22,5 +22,7 @@
     // require_once './escopo-global.php';
     // require_once './super-globais.php';
     // require_once './cookies.php';
-    require_once './session.php';
+    // require_once './session.php';
+    // require_once './post-get.php';
+    require_once './sanitizadores-validates.php';
     // rodar o servidor php -S localhost:3000 -t public

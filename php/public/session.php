@@ -1,8 +1,8 @@
 <?php 
 echo "<pre>";
 //  é necessario iniciar a sessão para criar uma
-
 session_start();
+
 $_SESSION['name'] = "Gabriel";
 
 
