@@ -1,5 +1,6 @@
 <?php 
     // require_once './tipos-de-variaveis.php';
+    require_once './array_testes.php';
     // require_once './variavel.php';
     // require_once './operadores-aritmeticos.php';
     // require_once "./operadores-de-atribuicao.php";
@@ -24,5 +25,5 @@
     // require_once './cookies.php';
     // require_once './session.php';
     // require_once './post-get.php';
-    require_once './sanitizadores-validates.php';
+    // require_once './sanitizadores-validates.php';
     // rodar o servidor php -S localhost:3000 -t public
