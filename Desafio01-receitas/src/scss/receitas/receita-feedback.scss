@@ -53,6 +53,10 @@
             &:hover {
                 text-decoration: none;
             }
+
+            &:disabled {
+                background-color: variables.$disabled;
+            }
         }
 
         textarea {

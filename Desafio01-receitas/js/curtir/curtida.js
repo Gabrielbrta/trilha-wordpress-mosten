@@ -5,12 +5,10 @@ function curtida() {
     if(!btnCurtir || !contador) return;
 
     function handleClick() {
-        btnCurtir.classList.toggle('like');
+        btnCurtir.classList.add('like');
         
         if(btnCurtir.classList.contains('like')) {
             contador.innerHTML = parseInt(contador.innerText) + 1;
-        } else {
-            contador.innerHTML = parseInt(contador.innerText) - 1;
         }
     }
 

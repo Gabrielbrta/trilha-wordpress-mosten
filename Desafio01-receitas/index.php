@@ -67,56 +67,7 @@
                 <h2>Receitas em Destaque</h2>
                 <p class="light">Nossas receitas mais populares e bem avaliadas pelos nossos chefs e comunidade.</p>
 
-                <div class="cards-container">
-                    <article class="card">
-                        <img src="./imgs/lasanha.jpg" alt="Foto de uma lasanha">
-                        <p class="level">Médio</p>
-                        <div class="card-content">
-                            <h3>Lasanha de Carne Tradicional</h3>
-                            <div class="card-stats light">
-                                <p><i class="fa-regular fa-clock"></i> <span>1h 30min</span></p>
-                                <p><i class="fa-solid fa-user-group"></i><span>8 porções</span></p>
-                            </div>
-                            <a href="./src/views/lasanha.html" class="btn btn-details">Ver Receita</a>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="./imgs/panquecas.jpg" alt="Foto de uma lasanha">
-                        <p class="level">Médio</p>
-                        <div class="card-content">
-                            <h3>Panquecas Fofas com Chocolate</h3>
-                            <div class="card-stats light">
-                                <p><i class="fa-regular fa-clock"></i> <span>25min</span></p>
-                                <p><i class="fa-solid fa-user-group"></i><span>4 porções</span></p>
-                            </div>
-                             <a href="#" class="btn btn-details">Ver Receita</a>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="./imgs/salada.jpg" alt="Foto de uma lasanha">
-                        <p class="level">Médio</p>
-                        <div class="card-content">
-                            <h3>Salada Caesar com Frango Grelhado</h3>
-                            <div class="card-stats light">
-                                <p><i class="fa-regular fa-clock"></i> <span>20min</span></p>
-                                <p><i class="fa-solid fa-user-group"></i><span>2 porções</span></p>
-                            </div>
-                            <a href="#" class="btn btn-details">Ver Receita</a>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="./imgs/salmao.jpg" alt="Foto de uma lasanha">
-                        <p class="level">Médio</p>
-                        <div class="card-content">
-                            <h3>Salmão Grelhado com Ervas</h3>
-                            <div class="card-stats light">
-                                <p><i class="fa-regular fa-clock"></i> <span>35min</span></p>
-                                <p><i class="fa-solid fa-user-group"></i><span>4 porções</span></p>
-                            </div>
-                             <a href="#" class="btn btn-details">Ver Receita</a>
-                        </div>
-                    </article>
-                </div>
+                <div class="cards-container"></div>
             </div>
          </section>
     </main>

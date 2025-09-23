@@ -1,3 +1,13 @@
+<?php 
+    require_once '../../php/connection.php';
+    require_once '../../php/getReceitas.php';
+    require_once '../../php/getIngredientes.php';
+    require_once '../../php/getModoPreparo.php';
+    $conn = null;
+    $stmt = null;
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,7 +21,7 @@
     <!-- Fonts awasome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/receitas/receitas.css">
-    <title>Lasanha de carne</title>
+    <title><?php echo $nome ?? $nome ?></title>
 </head>
 <body>
     <header>
@@ -40,15 +50,15 @@
     <main id="receita-container">
         <section class="receita-instrucoes">
             <div class="banner">
-                <img src="../../imgs/lasanha.jpg" alt="foto de uma lasanha">
+                <?php echo "<img src='$foto' alt='foto de uma $nome'>"; ?>
                 <section class="descricao">
                     <div>
                         <div class="actions">
                             <div>
-                                <h1>Lasanha de Carne Tradicional</h1>
-                                <p class="light">Uma deliciosa lasanha de carne com molho caseiro e queijo derretido. Perfeita para reunir a família!</p>
+                                <h1><?php echo $nome;?></h1>
+                                <p class="light"><?php echo $descricao;?></p>
                             </div>
-                            <button class="curtir "><i class="fa-solid fa-thumbs-up"></i> <span class="contador">30</span></button>
+                            <button class="curtir "><i class="fa-solid fa-thumbs-up"></i> <span class="contador"><?php echo $curtidas;?></span></button>
                         </div>
                     </div>
 
@@ -57,21 +67,21 @@
                             <div class="icon"><i class="fa-regular fa-clock"></i></div>
                             <div>
                                 <h2>Tempo</h2>
-                                <p class="light">1h 30min</p>
+                                <p class="light"><?php echo $tempo;?></p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="icon"><i class="fa-solid fa-user-group"></i></div>
                             <div>
                                 <h2>Porções</h2>
-                                <p class="light">8 pessoas</p>
+                                <p class="light"><?php echo $porcao;?> pessoas</p>
                             </div>
                         </div>
                         <div class="card">
                             <div class="icon"><i class="fa-solid fa-utensils"></i></div>
                             <div>
                                 <h2>Dificuldade</h2>
-                                <p class="light">Médio</p>
+                                <p class="light"><?php echo $dificuldade;?></p>
                             </div>
                         </div>
                     </div>
@@ -80,29 +90,25 @@
             <div class="ingredientes">
                 <h2>Ingredientes</h2>
                 <ul>
-                    <li>500g de massa para lasanha</li>
-                    <li>600g de carne moídaa</li>
-                    <li>2 xícaras de molho de tomate</li>
-                    <li>300g de queijo mussarela</li>
-                    <li>200g de queijo parmesão</li>
-                    <li>1 cebola média picada</li>
-                    <li>3 dentes de alho</li>
-                    <li>2 colheres de azeite</li>
-                    <li>Sal e pimenta a gosto</li>
-                    <li>Manjericão fresco</li>
+                   <?php 
+                    foreach($ingredientes as $ingrediente) {
+                       echo "<li>";
+                            echo strlen($ingrediente['unidade']) == 1 ? $ingrediente['quantidade'] : $ingrediente['quantidade']. " ";
+                            echo isset($ingrediente['unidade']) ? $ingrediente['unidade'] . " de " : "";
+                            echo $ingrediente['nome'];
+                        echo "</li>";
+                    }
+                   ?>
                 </ul>
             </div>
             <div class="modo-preparo">
                 <h2>Modo de Preparo</h2>
                 <ol>
-                    <li>Pré-aqueça o forno a 180°C.</li>
-                    <li>Cozinhe a massa da lasanha conforme instruções da embalagem.</li>
-                    <li>Em uma panela, refogue a cebola e o alho no azeite.</li>
-                    <li>Adicione a carne moída e cozinhe até dourar.</li>
-                    <li>Acrescente o molho de tomate e tempere com sal, pimenta e manjericão.</li>
-                    <li>Em um refratário, faça camadas alternando massa, molho de carne e queijo.</li>
-                    <li>Cubra com queijo parmesão e leve ao forno por 35 minutos.</li>
-                    <li>Deixe descansar por 10 minutos antes de servir.</li>
+                    <?php 
+                        foreach($modo_preparo as $item_preparo) {
+                            echo "<li>" . $item_preparo['nome'] . "</li>";
+                        }
+                    ?>
                 </ol>
             </div>
         </section>
@@ -116,7 +122,7 @@
                 <form action="">
                     <h3><i class="fa-regular fa-comment-dots"></i> Comentários</h3>
                     <textarea name="comentario" id="comentario" class="entrada-comentario" rows="5"></textarea>
-                    <button type="button" class="btn enviar"><i class="fa-regular fa-paper-plane"></i> Enviar Comentário</button>
+                    <button type="button" id="<?php echo $id; ?>" class="btn enviar"><i class="fa-regular fa-paper-plane"></i> Enviar Comentário</button>
                 </form>
                 <ul class="ultimos-comentarios">
                 </ul>

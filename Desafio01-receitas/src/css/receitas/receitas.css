@@ -377,6 +377,9 @@ header .header-container .menu ul a:hover {
 .receita-feedback .fomulario-comentarios form .btn:hover {
   text-decoration: none;
 }
+.receita-feedback .fomulario-comentarios form .btn:disabled {
+  background-color: rgb(206, 206, 206);
+}
 .receita-feedback .fomulario-comentarios form textarea {
   padding: 5px;
   font-size: 1rem;
