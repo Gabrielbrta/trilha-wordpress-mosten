@@ -354,14 +354,16 @@ header .header-container .menu ul a:hover {
 .receita-feedback .preenchida, .receita-feedback .vazia {
   color: #FACC15;
 }
+.receita-feedback .avaliacao {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
 .receita-feedback .avaliacao .estrela {
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
   width: 24px;
-}
-.receita-feedback .avaliacao .avaliacao p {
-  padding: 10px 0;
 }
 .receita-feedback .fomulario-comentarios, .receita-feedback .fomulario-comentarios form {
   display: flex;

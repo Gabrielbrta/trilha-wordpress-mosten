@@ -3,18 +3,19 @@ export class Avaliacao{
         this.stars = document.querySelector('.stars');
         this.btnEnviarComentario = document.querySelector('.enviar');
         this.totalEstrelas = 5;
-        if(this.stars || this.btnEnviarComentario) return;
+        if(!this.stars || !this.btnEnviarComentario) return;
     };
 
     adicionarEstrelas(){
-        for(let i = 0; i < this.totalEstrelas; i++) {
-            const star = document.createElement('i');
-            star.classList.add("fa-regular", 'fa-star', 'estrela');
-            star.dataset.index =  i;
-
-            this.stars.appendChild(star);
-            this.btnEnviarComentario.setAttribute("disabled", true);
-        }
+        if(!this.stars) return;
+            for(let i = 0; i < this.totalEstrelas; i++) {
+                const star = document.createElement('i');
+                star.classList.add("fa-regular", 'fa-star', 'estrela');
+                star.dataset.index =  i;
+    
+                this.stars.appendChild(star);
+                this.btnEnviarComentario.setAttribute("disabled", true);
+            }
     }
 
 // ao clicar na estrela ele muda as classes e estilos
@@ -57,7 +58,8 @@ export class Avaliacao{
 
 // adiciona os eventos de clique no container das estrelas
     addEvents() {
-        this.stars.addEventListener("click", (e) => {
+        if(!this.stars) return;
+            this.stars.addEventListener("click", (e) => {
             const index = parseInt(e.target.dataset.index, 10);
             this.atualizarEstrelas(index);
         });

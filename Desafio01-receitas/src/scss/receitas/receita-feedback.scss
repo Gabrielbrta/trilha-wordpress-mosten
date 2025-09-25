@@ -25,18 +25,16 @@
     }
 
     .avaliacao {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+
         .estrela {
         cursor: pointer;
         display: inline-block;
         font-size: 1rem;
         width: 24px;
-    }
-    .avaliacao {
-        p {
-            padding: 10px 0;
         }
-
-    }
     }
     
 

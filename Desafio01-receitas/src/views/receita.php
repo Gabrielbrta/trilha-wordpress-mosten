@@ -115,7 +115,8 @@
         <aside class="receita-feedback">
             <div class="avaliacao">
                 <h3>Avaliar Receita</h3>
-                <p><span class="stars"></span> <span class="light">clique para avaliar</span></p>
+                <p class="media_avaliacao">Média de avaliações: </p>
+                <p><span class="stars"></span> <span class="light">Avalie para comentar</span></p>
             </div>
     
             <div class="fomulario-comentarios">

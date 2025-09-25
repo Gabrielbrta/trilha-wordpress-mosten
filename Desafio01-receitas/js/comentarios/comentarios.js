@@ -3,9 +3,10 @@ import { Avaliacao } from "../avaliacao/avaliacao.js";
 const containerComentario = document.querySelector(".ultimos-comentarios");
 const entradaComentario = document.querySelector(".entrada-comentario");
 const botaoEnviar = document.querySelector(".enviar");
+const mediaAvaliacao = document.querySelector('.media_avaliacao');
 
 function comentarios() {
-    if(!containerComentario || !entradaComentario || !botaoEnviar) return;
+    if(!containerComentario || !entradaComentario || !botaoEnviar || !mediaAvaliacao) return;
 
     function adicionarComentario(comentario) {
         if(comentario !== "") {
@@ -65,6 +66,13 @@ async function getComentarios() {
     try {
         const reqComentarios = await fetch("http://localhost:3000/getComentarios.php" + window.location.search, {method: "GET"});
         const resComentarios = await reqComentarios.json();
+
+        // adiciono a media de avaliações
+        if(mediaAvaliacao && resComentarios[0].media_avaliacao) {
+            mediaAvaliacao.innerHTML += Number(resComentarios[0].media_avaliacao).toFixed() + "/5";
+        } 
+
+        // adiciono os comentarios com a resposta da requisição
         if(resComentarios) {
             resComentarios.forEach((comentario) => {
                 containerComentario.innerHTML += templateComentario(comentario.comentario, comentario.avaliacao);
@@ -76,10 +84,12 @@ async function getComentarios() {
 
     } catch(error) {
         console.error(error);
+        mediaAvaliacao.innerHTML += "seja o primeiro a avaliar!";
     }
 }
 
 function initComentarios() {
+    if(!containerComentario || !entradaComentario || !botaoEnviar) return;
     getComentarios();
     comentarios();
 }

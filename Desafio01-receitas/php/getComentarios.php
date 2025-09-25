@@ -15,7 +15,10 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
    $id = strip_tags($_GET['id']);
    try {
     // pegar todos os ingredientes
-        $stmt = $conn->prepare("SELECT * FROM comentarios WHERE id_receita = :id");
+        $stmt = $conn->prepare("SELECT comentarios.*,
+                                (SELECT avg(avaliacao) FROM comentarios WHERE id_receita = :id) AS media_avaliacao
+                                FROM comentarios
+                                WHERE id_receita = :id;");
         $stmt->execute(array('id' => $id));
         $comentarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
