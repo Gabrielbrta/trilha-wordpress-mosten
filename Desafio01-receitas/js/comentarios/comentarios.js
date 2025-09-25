@@ -1,4 +1,5 @@
 import { Avaliacao } from "../avaliacao/avaliacao.js";
+import Erro from "../feedback/Erro.js";
 
 const containerComentario = document.querySelector(".ultimos-comentarios");
 const entradaComentario = document.querySelector(".entrada-comentario");
@@ -11,7 +12,6 @@ function comentarios() {
     function adicionarComentario(comentario) {
         if(comentario !== "") {
             const avaliacao = new Avaliacao().stars.querySelector('.estrela').dataset.idAvaliacao;
-            console.log(avaliacao);
             containerComentario.innerHTML += templateComentario(comentario, Number(avaliacao));
             addComentarioBanco(botaoEnviar.getAttribute('id'),comentario, Number(avaliacao));
         }
@@ -27,8 +27,14 @@ function comentarios() {
                 method: "POST",
                 headers: {"Content-type": "Application/json"},
                 body: JSON.stringify(dados)
-            }).then((r) => console.log(r));
+            }).then((r) => {
+                const msgSucesso = "Seu comentário foi adicionado com sucesso!";
+                const msgErro = "Não foi possivel adicionar o seu comentário, tente novamente mais tarde!";
+                const erro = new Erro();
+                erro.popup(msgSucesso, msgErro, r.ok);
+            });
         } catch(error) {
+
             console.error(error);
         }
     }
@@ -37,6 +43,12 @@ function comentarios() {
         if(String(entradaComentario.value).trim() !== "") {
             const comentario = entradaComentario.value;
             adicionarComentario(comentario);
+            entradaComentario.value = '';
+        } else {
+            const msgErro = "Campo de comentário vazio!";
+            const erro = new Erro();
+            erro.popup("", msgErro, false);
+            console.log("teste");
         }
     }
 

@@ -23,14 +23,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
          // pegar todos os ingredientes
              $stmt = $conn->prepare("INSERT INTO comentarios (id_receita, comentario, avaliacao) VALUES(:id,:comentario, :avaliacao)");
              $stmt->execute(array("id" => $id,"comentario" => $comentario, "avaliacao" => $avaliacao));
-             $resInsertComentario = json_encode(["status" => true]);
-             if($resInsertComentario) {
-                 http_response_code(200);
-             } else {
-                 http_response_code(404);
-             }
+             
+            http_response_code(200);
+             
              
          } catch(PDOException $e) {
+            http_response_code(500);
             $conn = null;
              echo json_encode(['erro' => "Erro ao cadastrar o comentario"]);
              die();

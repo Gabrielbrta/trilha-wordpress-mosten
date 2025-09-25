@@ -7,6 +7,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
         $stmt->execute(array('id' => $id));
         $modo_preparo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        $conn = null;
+        $stmt = null;
         if(count($modo_preparo) > 0) {
             return $modo_preparo;
         } else {

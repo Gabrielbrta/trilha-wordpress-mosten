@@ -405,4 +405,56 @@ main {
   text-align: center;
 }
 
+.erro-container, .sucesso-container {
+  position: fixed;
+  z-index: 10;
+  right: 20px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+  background-color: #f55757;
+  border-radius: 5px;
+  padding: 20px;
+  color: #F8F8F6;
+  animation: topdown 1s ease-in-out forwards;
+}
+@keyframes topdown {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.erro-container.hidden, .sucesso-container.hidden {
+  animation: hidden 0.6s ease-in-out forwards;
+}
+@keyframes hidden {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.sucesso-container {
+  background-color: #5acf4a;
+}
+.sucesso-container .sucesso {
+  color: #0C0A09;
+}
+
+.erro-title, .sucesso-title {
+  font-size: 1.1rem;
+  color: #0C0A09;
+}
+
+.erro {
+  color: #F8F8F6;
+}
+
 /*# sourceMappingURL=style.css.map */

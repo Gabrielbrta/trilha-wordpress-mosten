@@ -12,7 +12,6 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
             http_response_code(200);
             return $ingredientes;
         }
-        die();
     } catch(PDOException $e) {
        http_response_code(500);
         json_encode(['erro' => "Erro na requisição da receita"]);

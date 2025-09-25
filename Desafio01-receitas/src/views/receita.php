@@ -1,10 +1,8 @@
 <?php 
-    require_once '../../php/connection.php';
-    require_once '../../php/getReceitas.php';
-    require_once '../../php/getIngredientes.php';
-    require_once '../../php/getModoPreparo.php';
-    $conn = null;
-    $stmt = null;
+    require '../../php/connection.php';
+    require '../../php/getReceitas.php';
+    require '../../php/getIngredientes.php';
+    require '../../php/getModoPreparo.php';
     
 ?>
 

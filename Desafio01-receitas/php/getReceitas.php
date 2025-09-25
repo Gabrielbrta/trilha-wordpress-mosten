@@ -18,6 +18,7 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
             $porcao = $dados["0"]["porcao"];
             $dificuldade = $dados["0"]["dificuldade"];
             $curtidas = $dados["0"]["curtidas"];
+            $dados = null;
         } else {
             header("Location: ./404.php");
             die();

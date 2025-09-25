@@ -1,0 +1,55 @@
+@use 'variables';
+
+.erro-container, .sucesso-container {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    background-color: variables.$erro-bg;
+    border-radius: 5px;
+    padding: 20px;
+    color: variables.$bg-home;
+
+    animation: topdown 1s ease-in-out forwards;
+    @keyframes topdown {
+        0% {
+            transform: translateY(-50px);
+        }100% {
+            transform: translateY(0px);
+        }
+    }
+
+    &.hidden {
+        animation: hidden .6s ease-in-out forwards;
+        @keyframes hidden {
+            0% {
+                transform: translateY(0px);
+            } 
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+    }
+}
+
+.sucesso-container {
+    background-color: variables.$sucesso-bg;
+    .sucesso {
+    color: variables.$secondary-color;
+}
+}
+
+.erro-title, .sucesso-title {
+    font-size: 1.1rem;
+    color: variables.$secondary-color;
+}
+
+.erro {
+    color: variables.$bg-home;
+}
+
