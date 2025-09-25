@@ -9,12 +9,12 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
         $ingredientes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($ingredientes) > 0) {
+            http_response_code(200);
             return $ingredientes;
-        } else {
-            die();
         }
-
-   } catch(PDOException $e) {
+        die();
+    } catch(PDOException $e) {
+       http_response_code(500);
         json_encode(['erro' => "Erro na requisição da receita"]);
    }
 } else {

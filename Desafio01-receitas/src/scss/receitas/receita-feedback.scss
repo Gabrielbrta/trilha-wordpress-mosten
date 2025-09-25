@@ -16,27 +16,30 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.068);
     }
 
+    .preenchida, .vazia {
+        padding: 2px;
+    }
+    
+    .preenchida, .vazia {
+        color: variables.$stars;
+    }
+
+    .avaliacao {
+        .estrela {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 1rem;
+        width: 24px;
+    }
     .avaliacao {
         p {
             padding: 10px 0;
         }
-        .stars {
-            .preenchida, .vazia {
-                padding: 2px;
-            }
-            
-            .preenchida, .vazia {
-                color: variables.$stars;
-            }
-            
-            .estrela {
-                cursor: pointer;
-                display: inline-block;
-                font-size: 1rem;
-                width: 24px;
-            }
-        }
+
     }
+    }
+    
+
 
     .fomulario-comentarios, .fomulario-comentarios form {
         display: flex;
@@ -81,8 +84,23 @@
                     flex-direction: column;
                     gap: 10px;
 
+                    div {
+                        display: flex;
+                        width: 100%;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        span {
+                            .estrela {
+                                width: 10px;
+                                cursor: default;
+                            }
+                        }
+                    }
                     .nome {
                         font-size: 1.1rem;
+                        width: 100%;
+
                     }
                 }
                 

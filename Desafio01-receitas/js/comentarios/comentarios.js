@@ -1,3 +1,5 @@
+import { Avaliacao } from "../avaliacao/avaliacao.js";
+
 const containerComentario = document.querySelector(".ultimos-comentarios");
 const entradaComentario = document.querySelector(".entrada-comentario");
 const botaoEnviar = document.querySelector(".enviar");
@@ -7,16 +9,17 @@ function comentarios() {
 
     function adicionarComentario(comentario) {
         if(comentario !== "") {
-            entradaComentario.value = "";
-            containerComentario.innerHTML += templateComentario(comentario, 1);
+            const avaliacao = new Avaliacao().stars.querySelector('.estrela').dataset.idAvaliacao;
+            console.log(avaliacao);
+            containerComentario.innerHTML += templateComentario(comentario, Number(avaliacao));
+            addComentarioBanco(botaoEnviar.getAttribute('id'),comentario, Number(avaliacao));
         }
-        addComentarioBanco(botaoEnviar.getAttribute('id'),comentario,2);
     }
     async function addComentarioBanco(id,comentario, avaliacao) {
         try {
             const dados = {
                 comentario: comentario,
-                avaliacao: avaliacao,
+                avaliacao: Number(avaliacao),
                 id: id,
             }
             fetch("http://localhost:3000/addComentario.php", {
@@ -27,10 +30,10 @@ function comentarios() {
         } catch(error) {
             console.error(error);
         }
-}
+    }
 
     function handleSubmit() {
-        if(entradaComentario.value !== "") {
+        if(String(entradaComentario.value).trim() !== "") {
             const comentario = entradaComentario.value;
             adicionarComentario(comentario);
         }
@@ -43,10 +46,15 @@ function comentarios() {
 }
 
 function templateComentario(comentario, avaliacao) {
+    const estrela = new Avaliacao();
+    const span = estrela.criarEstrelasAvaliacao(avaliacao);
     return `
         <li>
             <div class="perfil">
-                <p class="nome"><strong>Pedrinho</strong> <span class="avaliacao-comentario">${avaliacao}</span></p>
+            <div>
+                <p class="nome"><strong>Pedrinho</strong></p>
+                 ${span.innerHTML}
+            </div>
                 <p class="comentario light">${comentario}</p>
             </div>
         </li>
@@ -60,7 +68,6 @@ async function getComentarios() {
         if(resComentarios) {
             resComentarios.forEach((comentario) => {
                 containerComentario.innerHTML += templateComentario(comentario.comentario, comentario.avaliacao);
-                console.log(resComentarios);
             });
             
         }else {

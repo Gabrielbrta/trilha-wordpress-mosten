@@ -21,8 +21,10 @@ if($_SERVER['REQUEST_METHOD'] === "GET") {
 
         $receitas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         echo json_encode($receitas);
+        http_response_code(200);
         $conn = null;
     }catch (PDOException $e) {
+        http_response_code(500);
         echo json_encode(['erro' => "Erro na requisição do banco", 'exception' => $e]);
         $conn = null;
     }

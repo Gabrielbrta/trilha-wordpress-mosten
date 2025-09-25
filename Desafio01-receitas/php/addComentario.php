@@ -13,10 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
-    
     $json_comentarios = file_get_contents('php://input');
     $dadosComentario = json_decode($json_comentarios, true);
-    var_dump($dadosComentario);
     if(json_last_error() === JSON_ERROR_NONE && is_array($dadosComentario)) {
         try {
             $id = $dadosComentario['id'];

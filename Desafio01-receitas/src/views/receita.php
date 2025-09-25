@@ -58,7 +58,7 @@
                                 <h1><?php echo $nome;?></h1>
                                 <p class="light"><?php echo $descricao;?></p>
                             </div>
-                            <button class="curtir "><i class="fa-solid fa-thumbs-up"></i> <span class="contador"><?php echo $curtidas;?></span></button>
+                            <button class="curtir" data-btn-id="<?php echo $id;?>" ><i class="fa-solid fa-thumbs-up" data-btn-id="<?php echo $id;?>"></i> <span data-btn-id="<?php echo $id;?>" class="contador"><?php echo $curtidas;?></span></button>
                         </div>
                     </div>
 

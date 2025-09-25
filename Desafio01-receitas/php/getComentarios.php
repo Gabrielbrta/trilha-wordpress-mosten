@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET['id'])) {
-   $id = $_GET['id'];
+   $id = strip_tags($_GET['id']);
    try {
     // pegar todos os ingredientes
         $stmt = $conn->prepare("SELECT * FROM comentarios WHERE id_receita = :id");
@@ -20,15 +20,13 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
         $comentarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($comentarios) > 0) {
-            http_response_code(200);
             echo json_encode($comentarios);
-        } else {
-            http_response_code(404);
+            http_response_code(200);
         }
         
     } catch(PDOException $e) {
-       $conn = null;
-        echo json_encode(['erro' => "Erro na requisição da receita"]);
+        $conn = null;
+        http_response_code(500);
         die();
     }
 }

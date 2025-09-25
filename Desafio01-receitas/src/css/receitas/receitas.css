@@ -348,20 +348,20 @@ header .header-container .menu ul a:hover {
   border: 1px solid #e2e8f0;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.068);
 }
-.receita-feedback .avaliacao p {
-  padding: 10px 0;
-}
-.receita-feedback .avaliacao .stars .preenchida, .receita-feedback .avaliacao .stars .vazia {
+.receita-feedback .preenchida, .receita-feedback .vazia {
   padding: 2px;
 }
-.receita-feedback .avaliacao .stars .preenchida, .receita-feedback .avaliacao .stars .vazia {
+.receita-feedback .preenchida, .receita-feedback .vazia {
   color: #FACC15;
 }
-.receita-feedback .avaliacao .stars .estrela {
+.receita-feedback .avaliacao .estrela {
   cursor: pointer;
   display: inline-block;
   font-size: 1rem;
   width: 24px;
+}
+.receita-feedback .avaliacao .avaliacao p {
+  padding: 10px 0;
 }
 .receita-feedback .fomulario-comentarios, .receita-feedback .fomulario-comentarios form {
   display: flex;
@@ -402,8 +402,20 @@ header .header-container .menu ul a:hover {
   flex-direction: column;
   gap: 10px;
 }
+.receita-feedback .fomulario-comentarios ul li .perfil div {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.receita-feedback .fomulario-comentarios ul li .perfil div span .estrela {
+  width: 10px;
+  cursor: default;
+}
 .receita-feedback .fomulario-comentarios ul li .perfil .nome {
   font-size: 1.1rem;
+  width: 100%;
 }
 .receita-feedback .fomulario-comentarios .ultimos-comentarios li {
   word-wrap: break-word;
