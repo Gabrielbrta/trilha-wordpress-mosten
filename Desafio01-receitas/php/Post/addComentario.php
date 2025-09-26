@@ -17,9 +17,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $dadosComentario = json_decode($json_comentarios, true);
     if(json_last_error() === JSON_ERROR_NONE && is_array($dadosComentario)) {
         try {
-            $id = $dadosComentario['id'];
-            $comentario = $dadosComentario['comentario'];
-            $avaliacao = $dadosComentario['avaliacao'];
+            $id = strip_tags($dadosComentario['id']);
+            $comentario = strip_tags($dadosComentario['comentario']);
+            $avaliacao = strip_tags($dadosComentario['avaliacao']);
          // pegar todos os ingredientes
              $stmt = $conn->prepare("INSERT INTO comentarios (id_receita, comentario, avaliacao) VALUES(:id,:comentario, :avaliacao)");
              $stmt->execute(array("id" => $id,"comentario" => $comentario, "avaliacao" => $avaliacao));

@@ -89,8 +89,11 @@
                         justify-content: space-between;
                         align-items: center;
                         span {
+                            display: flex;
+                            align-items: center;
+                            font-size: .875rem;
+                            gap: 3px;
                             .estrela {
-                                width: 10px;
                                 cursor: default;
                             }
                         }

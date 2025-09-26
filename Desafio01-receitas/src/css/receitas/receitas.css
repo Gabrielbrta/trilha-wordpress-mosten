@@ -411,8 +411,13 @@ header .header-container .menu ul a:hover {
   justify-content: space-between;
   align-items: center;
 }
+.receita-feedback .fomulario-comentarios ul li .perfil div span {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  gap: 3px;
+}
 .receita-feedback .fomulario-comentarios ul li .perfil div span .estrela {
-  width: 10px;
   cursor: default;
 }
 .receita-feedback .fomulario-comentarios ul li .perfil .nome {

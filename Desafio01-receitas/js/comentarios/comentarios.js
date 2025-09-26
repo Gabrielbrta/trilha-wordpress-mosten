@@ -12,7 +12,7 @@ function comentarios() {
     function adicionarComentario(comentario) {
         if(comentario !== "") {
             const avaliacao = new Avaliacao().stars.querySelector('.estrela').dataset.idAvaliacao;
-            containerComentario.innerHTML += templateComentario(comentario, Number(avaliacao));
+            containerComentario.append(templateComentario(comentario, Number(avaliacao)));
             addComentarioBanco(botaoEnviar.getAttribute('id'),comentario, Number(avaliacao));
         }
     }
@@ -60,17 +60,32 @@ function comentarios() {
 function templateComentario(comentario, avaliacao) {
     const estrela = new Avaliacao();
     const span = estrela.criarEstrelasAvaliacao(avaliacao);
-    return `
-        <li>
-            <div class="perfil">
-            <div>
-                <p class="nome"><strong>Pedrinho</strong></p>
-                 ${span.innerHTML}
-            </div>
-                <p class="comentario light">${comentario}</p>
-            </div>
-        </li>
-    `
+    const li = document.createElement('li');
+    
+    const divPerfil = document.createElement('div');
+    divPerfil.classList.add("perfil")
+
+    const div = document.createElement('div')
+
+    const nome = document.createElement('p');
+    nome.classList.add("nome");
+
+    const pComentario = document.createElement('p');
+    pComentario.className = "comentario light";
+
+    const destaque = document.createElement('strong');
+    destaque.innerText = "pedrinho";
+
+    nome.append(destaque);
+    //estrelas dos comentarios
+    pComentario.textContent = comentario;
+
+    div.append(nome);
+    div.append(span);
+    divPerfil.append(div);
+    divPerfil.append(pComentario);
+    li.append(divPerfil);
+    return li;
 }
 
 async function getComentarios() {
@@ -86,7 +101,7 @@ async function getComentarios() {
         // adiciono os comentarios com a resposta da requisição
         if(resComentarios) {
             resComentarios.forEach((comentario) => {
-                containerComentario.innerHTML += templateComentario(comentario.comentario, comentario.avaliacao);
+                containerComentario.append(templateComentario(comentario.comentario, comentario.avaliacao));
             });
             
         }else {
