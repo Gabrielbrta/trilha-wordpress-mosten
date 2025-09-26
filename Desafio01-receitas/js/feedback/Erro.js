@@ -16,8 +16,8 @@ class Erro {
         this.popupContainer = document.createElement("div");
         this.tituloErro = document.createElement("h2");
         this.mensagemErro = document.createElement("p");
+        this.intervalo = null;
     }
-
     popup(mensagem, mensagemNegativa ,status) {
         if(!this.body) return;
 
@@ -25,7 +25,6 @@ class Erro {
         const removeElemento = () => {
             const erroContainer = this.body.getElementsByClassName(this.erroContainerClass);
             const sucessoContainer = this.body.getElementsByClassName(this.sucessoContainerClass);
-            console.log(sucessoContainer);
 
             if(erroContainer.length > 0) {
                 erroContainer[0].remove();
@@ -67,12 +66,11 @@ class Erro {
             
         }
 
-        let intervalo;
-        clearTimeout(intervalo);
-
         const esconder = (elemento) => {
-            intervalo = setTimeout(() => {
-                elemento.classList.add(this.hiddenElementoClass);
+            this.intervalo = setTimeout(() => {
+                if(elemento) {
+                    elemento.classList.add(this.hiddenElementoClass);
+                }
             }, 3000);
         }
         

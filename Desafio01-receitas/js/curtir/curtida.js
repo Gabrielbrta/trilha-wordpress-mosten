@@ -19,11 +19,11 @@ function curtida() {
                     curtida: parseInt(contador.innerText)
                 }
                 ;
-                fetch("http://localhost:3000/addCurtir.php", {
+                fetch("http://localhost:3000/Post/addCurtir.php", {
                     method: "POST",
                     headers: {"Content-type": "Application/json"},
                     body: JSON.stringify(dados),
-                }).then((r) => console.log(r));
+                });
             }catch(error) {
                 console.error(error);
             }

@@ -1,9 +1,9 @@
 <?php 
     require '../../php/connection.php';
-    require '../../php/getReceitas.php';
-    require '../../php/getIngredientes.php';
-    require '../../php/getModoPreparo.php';
-    
+    // require '../../php/Get/getComentarios.php';
+    require '../../php/Get/getReceitas.php';
+    require '../../php/Get/getIngredientes.php';
+    require '../../php/Get/getModoPreparo.php';
 ?>
 
 <!DOCTYPE html>

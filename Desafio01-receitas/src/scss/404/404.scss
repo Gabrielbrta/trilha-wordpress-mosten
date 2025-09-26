@@ -1,0 +1,46 @@
+@use '../reset.scss';
+@use '../variables.scss';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: variables.$bg-404;
+}
+
+.container {
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    img {
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center top;
+    }
+
+    a {
+        display: inline-block;
+        padding: 8px 24px;
+        background-color: variables.$primary-color;
+        border-radius: 5px;
+        color: variables.$bg-home;
+        transition: .3s;
+        
+        &:hover {
+            background-color: variables.$hover-color;
+        }
+
+    }
+
+    .erro-404 {
+        font-size: 3rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}

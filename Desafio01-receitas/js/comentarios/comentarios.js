@@ -23,7 +23,7 @@ function comentarios() {
                 avaliacao: Number(avaliacao),
                 id: id,
             }
-            fetch("http://localhost:3000/addComentario.php", {
+            fetch("http://localhost:3000/Post/addComentario.php", {
                 method: "POST",
                 headers: {"Content-type": "Application/json"},
                 body: JSON.stringify(dados)
@@ -48,7 +48,6 @@ function comentarios() {
             const msgErro = "Campo de comentário vazio!";
             const erro = new Erro();
             erro.popup("", msgErro, false);
-            console.log("teste");
         }
     }
 
@@ -76,12 +75,12 @@ function templateComentario(comentario, avaliacao) {
 
 async function getComentarios() {
     try {
-        const reqComentarios = await fetch("http://localhost:3000/getComentarios.php" + window.location.search, {method: "GET"});
+        const reqComentarios = await fetch("http://localhost:3000/Get/getComentarios.php" + window.location.search, {method: "GET"});
         const resComentarios = await reqComentarios.json();
 
         // adiciono a media de avaliações
         if(mediaAvaliacao && resComentarios[0].media_avaliacao) {
-            mediaAvaliacao.innerHTML += Number(resComentarios[0].media_avaliacao).toFixed() + "/5";
+            mediaAvaliacao.innerHTML += Number(resComentarios[0].media_avaliacao).toFixed(1) + " / 5";
         } 
 
         // adiciono os comentarios com a resposta da requisição
