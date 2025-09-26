@@ -91,7 +91,7 @@
                    <?php 
                     foreach($ingredientes as $ingrediente) {
                        echo "<li>";
-                            echo strlen($ingrediente['unidade']) == 1 ? $ingrediente['quantidade'] : $ingrediente['quantidade']. " ";
+                            echo strlen(isset($ingrediente['unidade']) ? $ingrediente['unidade'] : 0) == 1 ? $ingrediente['quantidade'] . " ": $ingrediente['quantidade']. " ";
                             echo isset($ingrediente['unidade']) ? $ingrediente['unidade'] . " de " : "";
                             echo $ingrediente['nome'];
                         echo "</li>";

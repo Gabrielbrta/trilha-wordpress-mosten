@@ -23,8 +23,8 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id']) && is_numeric($_GET
         $comentarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if(count($comentarios) > 0) {
-            echo json_encode($comentarios);
             http_response_code(200);
+            echo json_encode($comentarios);
         }
         
     } catch(PDOException $e) {
